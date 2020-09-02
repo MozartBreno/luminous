@@ -1,3 +1,4 @@
+import { Cliente } from './../cliente.model';
 import { ClienteService } from './../cliente.service';
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
@@ -9,6 +10,12 @@ import {Router} from '@angular/router';
 })
 export class ClienteCreateComponent implements OnInit {
 
+  cliente: Cliente = {
+    nome: '',
+    cpf: '',
+    estado: ''
+  }
+
   constructor(private clienteService: ClienteService,
               private router: Router) { }
 
@@ -16,7 +23,10 @@ export class ClienteCreateComponent implements OnInit {
     
   }
   createCliente():void {
-    this.clienteService.showMessage("inserido com sucesso");
+    this.clienteService.create(this.cliente).subscribe(() => {
+      this.clienteService.showMessage("inserido com sucesso");
+      this.router.navigate(['/cliente'])
+    })
   }
   cancel():void {
     this.router.navigate(['/cliente'])

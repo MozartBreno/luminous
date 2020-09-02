@@ -1,6 +1,22 @@
-<button mat-raised-button (click)="createCliente()" color="primary">
-    Salvar
-</button>
-<button mat-raised-button (click)="cancel()" color="sucess">
-    Cancelar
-</button>
+<mat-card>
+    <mat-card-title>
+        Novo cliente
+    </mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="nome" [(ngModel)]="cliente.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="cpf" [(ngModel)]="cliente.cpf" name="cpf">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="estado" [(ngModel)]="cliente.estado" name="estado">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="createCliente()" color="primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

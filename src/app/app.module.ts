@@ -15,9 +15,19 @@ import {MatSidenavModule} from '@angular/material/sidenav'
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
-import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component'
-import {MatButtonModule} from '@angular/material/button'
-import {MatSnackBarModule} from '@angular/material/snack-bar'
+import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {HttpClientModule} from '@angular/common/http';
+
+import {FormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { ClienteReadComponent } from './components/cliente/cliente-read/cliente-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +36,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     NavComponent,
     HomeComponent,
     ClienteCrudComponent,
-    ClienteCreateComponent
+    ClienteCreateComponent,
+    ClienteReadComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +48,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
